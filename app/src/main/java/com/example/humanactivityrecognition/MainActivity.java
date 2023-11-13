@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
-    TextView tv1,tv2,tv3;
+    TextView tv1,tv2,tv3,tv4,tv5,tv6;
     private SensorManager mSensorManager;
     private Sensor accelerometer;
     private Sensor gyroscope;
@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         tv1=findViewById(R.id.tv1);
         tv2=findViewById(R.id.tv2);
         tv3=findViewById(R.id.tv3);
+        tv4=findViewById(R.id.tv4);
+        tv5=findViewById(R.id.tv5);
+        tv6=findViewById(R.id.tv6);
         // SensorManageri al
         mSensorManager= (SensorManager) getSystemService(SENSOR_SERVICE);
         // Accelerometer sensörünü al
@@ -39,28 +42,31 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
     }
 
-
-
-
     @Override
     public void onSensorChanged(SensorEvent event) {
 
-            if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-                // Ivmeölcer değerleri burada alınır
-                float x = event.values[0];
-                float y = event.values[1];
-                float z = event.values[2];
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            // Ivmeölcer değerleri burada alınır
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
 
-            } else if (event.sensor.getType() == Sensor.TYPE_GYROSCOPE) {
-                // Gyroskop değerleri burada alınır
-                float x = event.values[0];
-                float y = event.values[1];
-                float z = event.values[2];
+            tv1.setText("Acc X = " + x);
+            tv2.setText("Acc Y = " + y);
+            tv3.setText("Acc Z = " + z);
 
-            }
-        tv1.setText("X ="+ event.values[0]);
-        tv2.setText("Y ="+ event.values[1]);
-        tv3.setText("Z ="+ event.values[2]);
+        } else if (event.sensor.getType() == Sensor.TYPE_GYROSCOPE) {
+            // Gyroskop değerleri burada alınır
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+
+            // Gyroskop değerlerini ayrı TextView'lara güncelleyin
+            tv4.setText("Gyro X = " + event.values[0]);
+            tv5.setText("Gyro Y = " + event.values[1]);
+            tv6.setText("Gyro Z = " + event.values[2]);
+        }
+
     }
 
     @Override

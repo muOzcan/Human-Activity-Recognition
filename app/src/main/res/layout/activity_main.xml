@@ -12,24 +12,48 @@
         android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="X value:"
+        android:hint="X Accelerometer value:"
         android:gravity="center"
-        android:textSize="24sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Y value:"
+        android:hint="Y Accelerometer value:"
         android:gravity="center"
-        android:textSize="24sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tv3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Z value:"
+        android:hint="Z Accelerometer value:"
         android:gravity="center"
-        android:textSize="24sp" />
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="X Gyroscope value:"
+        android:gravity="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y Gyroscope value:"
+        android:gravity="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Z Gyroscope value:"
+        android:gravity="center"
+        android:textSize="16sp" />
 
 </LinearLayout>
